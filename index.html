@@ -63,9 +63,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://qingralf.github.io"></form>
@@ -75,6 +75,51 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-页面离线缓存" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/12/页面离线缓存/" class="article-date">
+  <time datetime="2016-06-11T17:12:10.000Z" itemprop="datePublished">2016-06-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/12/页面离线缓存/">页面离线缓存</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>有一个想法，还没有研究可行性。</p>
+<p>HTML5中引入了离线缓存，利用这个缓存是否可以做到，让某个页面永不宕机，即使在服务器返回4xx，5xx等错误的时候。<br>引入这个特性的初衷，是为了没有互联网的情况下使用，能否移花接木用来处理服务器异常的情况呢。在某些情况下，web服务器与网页之间会加入应用防火墙，流量负载均衡，流量清洗，运营商缓存等逻辑等，这些逻辑的错误页面可能不由我们自己控制。</p>
+<p>离线缓存和之前的网页缓存（js，css，页面等的缓存）有什么联系么？网页缓存的目录里能找到被缓存的源文件，但离线缓存的结果是以什么格式，又存储在哪里呢？</p>
+<p>离线缓存是否可以大规模应用，加在cdn之前，加快网页加载速度和节省cdn流量呢？</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qingralf.github.io/2016/06/12/页面离线缓存/" data-id="cipbg5v6b00034vyysan2gr4r" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+<!-- UY BEGIN -->
+<div id="uyan_frame"></div>
+<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2102716"></script>
+<!-- UY END -->
+
   
     <article id="post-添加google-analytics" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -106,7 +151,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://qingralf.github.io/2016/06/06/添加google-analytics/" data-id="cip2urkd10001bgyysvv7x7gx" class="article-share-link">Partager</a>
+      <a data-url="http://qingralf.github.io/2016/06/06/添加google-analytics/" data-id="cipbg5v6o00044vyycnzgwju2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -153,15 +198,17 @@
      src:url('/css/fonts/UniDreamLED.woff')format('woff');
   }
   </style>
-  <script>
-  window.onload=function(){
-    setInterval(function(){
-      document.getElementById('clock').innerHTML = new Date().toLocaleString();
-    },1000);
-  };
-  </script>
+
 simple clock
 <div id="clock" style="font-family:'LED';font-size:70px;"></div>
+
+<script>
+
+  setInterval(function(){
+    document.getElementById('clock').innerHTML = new Date().toLocaleString();
+  },1000);
+
+</script>
 
 <hr>
 <p>盯了他一会，发现这个字体不是等宽的，1字好窄。有时间再看看字体的制作，自己修改下吧。</p>
@@ -169,7 +216,7 @@ simple clock
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://qingralf.github.io/2016/06/05/一个电子表/" data-id="cip2urkd30002bgyyqb4kqr6v" class="article-share-link">Partager</a>
+      <a data-url="http://qingralf.github.io/2016/06/05/一个电子表/" data-id="cipbg5v6000004vyy1yb68l40" class="article-share-link">Share</a>
       
       
     </footer>
@@ -220,7 +267,7 @@ simple clock
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://qingralf.github.io/2016/06/03/markdown临摹/" data-id="cip2urkcv0000bgyykwxdn3kq" class="article-share-link">Partager</a>
+      <a data-url="http://qingralf.github.io/2016/06/03/markdown临摹/" data-id="cipbg5v6800024vyym49ne89e" class="article-share-link">Share</a>
       
       
     </footer>
@@ -266,7 +313,7 @@ simple clock
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://qingralf.github.io/2016/06/02/寻找未知的开始/" data-id="cip2urkd60003bgyydwik6inp" class="article-share-link">Partager</a>
+      <a data-url="http://qingralf.github.io/2016/06/02/寻找未知的开始/" data-id="cipbg5v6500014vyypejpugr6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -306,9 +353,13 @@ simple clock
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/06/12/页面离线缓存/">页面离线缓存</a>
+          </li>
         
           <li>
             <a href="/2016/06/06/添加google-analytics/">添加google analytics</a>
@@ -339,7 +390,7 @@ simple clock
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2016 qingralf<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>

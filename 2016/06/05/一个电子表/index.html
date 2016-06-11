@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://qingralf.github.io/2016/06/05/一个电子表/index.html">
 <meta property="og:site_name" content="Unknow">
 <meta property="og:description" content="虽然不喜欢电梯，但是电梯里的那一个个数字还是觉得很美。虚虚实实的8的形状，竟然可以拼凑出10个数字。有次无聊的时候，用几个div，里面背景色弄成黑色，用来做一个个笔划，实现一个电子表的时钟。然后趴桌子上，看时间缓缓流走。已经忘记了当时的做法，只记得不完美。好像是setInterval 1s获取当前时间并显示。但是由于渲染几个div需要时间，所以每隔一段时间，就会出现某一秒被跳过。然后为了让这个跳过">
-<meta property="og:updated_time" content="2016-06-04T19:05:20.000Z">
+<meta property="og:updated_time" content="2016-06-11T17:39:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一个电子表">
 <meta name="twitter:description" content="虽然不喜欢电梯，但是电梯里的那一个个数字还是觉得很美。虚虚实实的8的形状，竟然可以拼凑出10个数字。有次无聊的时候，用几个div，里面背景色弄成黑色，用来做一个个笔划，实现一个电子表的时钟。然后趴桌子上，看时间缓缓流走。已经忘记了当时的做法，只记得不完美。好像是setInterval 1s获取当前时间并显示。但是由于渲染几个div需要时间，所以每隔一段时间，就会出现某一秒被跳过。然后为了让这个跳过">
@@ -64,9 +64,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://qingralf.github.io"></form>
@@ -107,15 +107,17 @@
      src:url('/css/fonts/UniDreamLED.woff')format('woff');
   }
   </style>
-  <script>
-  window.onload=function(){
-    setInterval(function(){
-      document.getElementById('clock').innerHTML = new Date().toLocaleString();
-    },1000);
-  };
-  </script>
+
 simple clock
 <div id="clock" style="font-family:'LED';font-size:70px;"></div>
+
+<script>
+
+  setInterval(function(){
+    document.getElementById('clock').innerHTML = new Date().toLocaleString();
+  },1000);
+
+</script>
 
 <hr>
 <p>盯了他一会，发现这个字体不是等宽的，1字好窄。有时间再看看字体的制作，自己修改下吧。</p>
@@ -123,7 +125,7 @@ simple clock
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://qingralf.github.io/2016/06/05/一个电子表/" data-id="cip2urkd30002bgyyqb4kqr6v" class="article-share-link">Partager</a>
+      <a data-url="http://qingralf.github.io/2016/06/05/一个电子表/" data-id="cipbg5v6000004vyy1yb68l40" class="article-share-link">Share</a>
       
       
     </footer>
@@ -133,7 +135,7 @@ simple clock
 <nav id="article-nav">
   
     <a href="/2016/06/06/添加google-analytics/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Récent</strong>
+      <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
           添加google analytics
@@ -143,7 +145,7 @@ simple clock
   
   
     <a href="/2016/06/03/markdown临摹/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Ancien</strong>
+      <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">markdown临摹</div>
     </a>
   
@@ -181,9 +183,13 @@ simple clock
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/06/12/页面离线缓存/">页面离线缓存</a>
+          </li>
         
           <li>
             <a href="/2016/06/06/添加google-analytics/">添加google analytics</a>
@@ -214,7 +220,7 @@ simple clock
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2016 qingralf<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
