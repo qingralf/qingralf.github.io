@@ -63,9 +63,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://qingralf.github.io"></form>
@@ -104,17 +104,23 @@
 <p>离线缓存是否可以大规模应用，加在cdn之前，加快网页加载速度和节省cdn流量呢？</p>
 <hr>
 <p>目前测试的部分结果</p>
-<p>1 chrome下有提示，在不建议非安全连接下使用，虽然目前可用，但未来会被移除</p>
+<ol>
+<li><p>chrome下有提示，不建议在非安全连接下使用，虽然目前可用，但未来会被移除</p>
 <blockquote>
-<p>Use of the Application Cache is deprecated on insecure origins. Support will be removed in the future. You should consider switching your application to a secure origin, such as HTTPS. See <a href="https://goo.gl/rStTGz" target="_blank" rel="external">https://goo.gl/rStTGz</a> for more details.</p>
+<p><small>Use of the Application Cache is deprecated on insecure origins. Support will be removed in the future. You should consider switching your application to a secure origin, such as HTTPS. See <a href="https://goo.gl/rStTGz" target="_blank" rel="external">https://goo.gl/rStTGz</a> for more details.</small></p>
 </blockquote>
-<p>2 manifest文件必须以text/cache-manifest的Content－type返回，且文件以CACHE MANIFEST开头。<br>意味着动态语言生成的这个文件需要去除空行，比如jsp的&lt;％ ％&gt;指令留下的空行需要去除<br>3 引用manifest的页面默认被缓存(type为Master)。但是这个页面的缓存会重新发起一次请求，这次请求并不会携带device信息。<br>意味着如果用chrome浏览器模拟移动设备，此时缓存的页面是非移动设备的页面，影响测试。<br>4 如果只缓存有限的文件，需要在manifest文件的”NETWORK:”下配置通配符 ＊ 。否则很诡异大部分请求会是net::ERR_FAILED状态。另，通配符需要另起一行写不能和“NETWORK:”并列。</p>
+</li>
+<li><p>manifest文件必须以text/cache-manifest的Content－type返回，且文件以CACHE MANIFEST开头。<br>意味着动态语言生成的这个文件需要去除空行，比如jsp的&lt;％ ％&gt;指令留下的空行需要去除</p>
+</li>
+<li>引用manifest的页面默认被缓存(type为Master)。但是这个页面的缓存会重新发起一次请求，这次请求并不会携带device信息。<br>意味着如果用chrome浏览器模拟移动设备，此时缓存的页面是非移动设备的页面，影响测试。</li>
+<li>如果只缓存有限的文件，需要在manifest文件的”NETWORK:”下配置通配符 ＊ 。否则很诡异大部分请求会是net::ERR_FAILED状态。另，通配符需要另起一行写不能和“NETWORK:”并列。</li>
+</ol>
 <p>缓存后速度确实很快，不需要网络了。但是浏览器对这个的支持貌似还没跟上，调试和各种错误提示都太模糊。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://qingralf.github.io/2016/06/12/页面离线缓存/" data-id="cipfphkhs00041myyscp0fyyd" class="article-share-link">Share</a>
+      <a data-url="http://qingralf.github.io/2016/06/12/页面离线缓存/" data-id="cipfpkka6000329yyb8ybsod1" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -159,7 +165,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://qingralf.github.io/2016/06/06/添加google-analytics/" data-id="cipfphkhp00031myymukxtvss" class="article-share-link">Share</a>
+      <a data-url="http://qingralf.github.io/2016/06/06/添加google-analytics/" data-id="cipfpkka2000229yyo7ogfila" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -224,7 +230,7 @@ simple clock
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://qingralf.github.io/2016/06/05/一个电子表/" data-id="cipfphkhk00011myyvw1drp23" class="article-share-link">Share</a>
+      <a data-url="http://qingralf.github.io/2016/06/05/一个电子表/" data-id="cipfpkk9s000029yy5jdku55e" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -275,7 +281,7 @@ simple clock
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://qingralf.github.io/2016/06/03/markdown临摹/" data-id="cipfphkha00001myy8zh0f17l" class="article-share-link">Share</a>
+      <a data-url="http://qingralf.github.io/2016/06/03/markdown临摹/" data-id="cipfpkk9x000129yyvg4qhvh4" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -321,7 +327,7 @@ simple clock
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://qingralf.github.io/2016/06/02/寻找未知的开始/" data-id="cipfphkhm00021myyb9mw6cwi" class="article-share-link">Share</a>
+      <a data-url="http://qingralf.github.io/2016/06/02/寻找未知的开始/" data-id="cipfpkkb4000429yy0a55b8cs" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -361,7 +367,7 @@ simple clock
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
         
@@ -398,7 +404,7 @@ simple clock
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2016 qingralf<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
