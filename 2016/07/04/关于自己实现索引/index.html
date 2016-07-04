@@ -3,18 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>一个电子表 | Unknow</title>
+  <title>关于自己实现索引 | Unknow</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="虽然不喜欢电梯，但是电梯里的那一个个数字还是觉得很美。虚虚实实的8的形状，竟然可以拼凑出10个数字。有次无聊的时候，用几个div，里面背景色弄成黑色，用来做一个个笔划，实现一个电子表的时钟。然后趴桌子上，看时间缓缓流走。已经忘记了当时的做法，只记得不完美。好像是setInterval 1s获取当前时间并显示。但是由于渲染几个div需要时间，所以每隔一段时间，就会出现某一秒被跳过。然后为了让这个跳过">
+  <meta name="description" content="人类一思考，上帝就发笑。可怕的未知，但是还是想探寻什么。
+如果有一个超过4g左右的文本文件，内容大概是key\tvalue的格式，如何查找某一个key对应的value。问题的起源就在这里。曾经自以为聪明的认为，这个问题的正解是，load到数据库，建立索引，使用sql查询。直到自己发问，数据库是如何实现索引，索引在硬盘中是如何存储的，如果索引超过了内存的大小，那如何来使用这个索引。从数据库到各种大数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="一个电子表">
-<meta property="og:url" content="http://qingralf.github.io/2016/06/05/一个电子表/index.html">
+<meta property="og:title" content="关于自己实现索引">
+<meta property="og:url" content="http://qingralf.github.io/2016/07/04/关于自己实现索引/index.html">
 <meta property="og:site_name" content="Unknow">
-<meta property="og:description" content="虽然不喜欢电梯，但是电梯里的那一个个数字还是觉得很美。虚虚实实的8的形状，竟然可以拼凑出10个数字。有次无聊的时候，用几个div，里面背景色弄成黑色，用来做一个个笔划，实现一个电子表的时钟。然后趴桌子上，看时间缓缓流走。已经忘记了当时的做法，只记得不完美。好像是setInterval 1s获取当前时间并显示。但是由于渲染几个div需要时间，所以每隔一段时间，就会出现某一秒被跳过。然后为了让这个跳过">
-<meta property="og:updated_time" content="2016-06-11T17:39:24.000Z">
+<meta property="og:description" content="人类一思考，上帝就发笑。可怕的未知，但是还是想探寻什么。
+如果有一个超过4g左右的文本文件，内容大概是key\tvalue的格式，如何查找某一个key对应的value。问题的起源就在这里。曾经自以为聪明的认为，这个问题的正解是，load到数据库，建立索引，使用sql查询。直到自己发问，数据库是如何实现索引，索引在硬盘中是如何存储的，如果索引超过了内存的大小，那如何来使用这个索引。从数据库到各种大数">
+<meta property="og:updated_time" content="2016-07-04T16:22:21.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一个电子表">
-<meta name="twitter:description" content="虽然不喜欢电梯，但是电梯里的那一个个数字还是觉得很美。虚虚实实的8的形状，竟然可以拼凑出10个数字。有次无聊的时候，用几个div，里面背景色弄成黑色，用来做一个个笔划，实现一个电子表的时钟。然后趴桌子上，看时间缓缓流走。已经忘记了当时的做法，只记得不完美。好像是setInterval 1s获取当前时间并显示。但是由于渲染几个div需要时间，所以每隔一段时间，就会出现某一秒被跳过。然后为了让这个跳过">
+<meta name="twitter:title" content="关于自己实现索引">
+<meta name="twitter:description" content="人类一思考，上帝就发笑。可怕的未知，但是还是想探寻什么。
+如果有一个超过4g左右的文本文件，内容大概是key\tvalue的格式，如何查找某一个key对应的value。问题的起源就在这里。曾经自以为聪明的认为，这个问题的正解是，load到数据库，建立索引，使用sql查询。直到自己发问，数据库是如何实现索引，索引在硬盘中是如何存储的，如果索引超过了内存的大小，那如何来使用这个索引。从数据库到各种大数">
   
     <link rel="alternate" href="/atom.xml" title="Unknow" type="application/atom+xml">
   
@@ -75,10 +78,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-一个电子表" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-关于自己实现索引" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/06/05/一个电子表/" class="article-date">
-  <time datetime="2016-06-04T18:14:03.000Z" itemprop="datePublished">2016-06-05</time>
+    <a href="/2016/07/04/关于自己实现索引/" class="article-date">
+  <time datetime="2016-07-04T15:51:13.000Z" itemprop="datePublished">2016-07-04</time>
 </a>
     
   </div>
@@ -89,7 +92,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      一个电子表
+      关于自己实现索引
     </h1>
   
 
@@ -97,35 +100,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>虽然不喜欢电梯，但是电梯里的那一个个数字还是觉得很美。虚虚实实的8的形状，竟然可以拼凑出10个数字。<br>有次无聊的时候，用几个div，里面背景色弄成黑色，用来做一个个笔划，实现一个电子表的时钟。然后趴桌子上，看时间缓缓流走。<br>已经忘记了当时的做法，只记得不完美。<br>好像是setInterval 1s获取当前时间并显示。但是由于渲染几个div需要时间，所以每隔一段时间，就会出现某一秒被跳过。然后为了让这个跳过少出现，自己控制时间的进位，平时只渲染移动最后一位秒，等到0的时候进位，刷新前一个数字，依次类推。<br>又好像想过setTimeout，每次加一秒。但又会和现实时间偏差。<br>也不记得当时有没有想到用字体来实现。只是现在想起了这样的实现。<br>也是研究下markdown和hexo的结合中怎么引用js，css和外部文件。</p>
-<hr>
-
-  <style>
-  @font-face
-   {
-     font-family:'LED';
-     src:url('/css/fonts/UniDreamLED.woff')format('woff');
-  }
-  </style>
-
-simple clock
-<div id="clock" style="font-family:'LED';font-size:70px;"></div>
-
-<script>
-
-  setInterval(function(){
-    document.getElementById('clock').innerHTML = new Date().toLocaleString();
-  },1000);
-
-</script>
-
-<hr>
-<p>盯了他一会，发现这个字体不是等宽的，1字好窄。有时间再看看字体的制作，自己修改下吧。</p>
+        <p>人类一思考，上帝就发笑。可怕的未知，但是还是想探寻什么。</p>
+<p>如果有一个超过4g左右的文本文件，内容大概是key\tvalue的格式，如何查找某一个key对应的value。问题的起源就在这里。曾经自以为聪明的认为，这个问题的正解是，load到数据库，建立索引，使用sql查询。直到自己发问，数据库是如何实现索引，索引在硬盘中是如何存储的，如果索引超过了内存的大小，那如何来使用这个索引。从数据库到各种大数据平台，就算没有索引，也提供了使用主键查询，又是如何实现的呢。</p>
+<p>因为索引是对数据或者地址的引用，索引的前提是否是可以根据地址定位到数据？如果不可以定位到数据，那索引又该如何实现和使用呢？</p>
+<p>目前假想的索引实现是：<br>1 保存在内存或者文件系统中。如果在文件系统中，索引需要便于查找的文件格式，比如，使用btree实现的索引，每个treeNode使用256字节，整个文件的大小除以256就是索引的行数，root节点在文件头部，根据树查找需要的key的位置。<br>2 从位置中得到数据的首地址，调用文件系统api读取此地址加上数据长度的内容，结果就是需要的value。<br>3 索引的生成如果是在文件系统中，则会有大量的io，生成过程会比较慢。</p>
+<p>要印证这些到自我实现，需要经历什么样的过程呢。数据结构只听过名字，还是得从数据结构入手吧。</p>
+<p>什么是btree，这个结构的插入，删除，更新又是如何处理的呢？从这里开始吧。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://qingralf.github.io/2016/06/05/一个电子表/" data-id="ciq88j1b60002g9yyic4u55ax" class="article-share-link">Share</a>
+      <a data-url="http://qingralf.github.io/2016/07/04/关于自己实现索引/" data-id="ciq88j1b40001g9yysrd8dlyp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -134,19 +119,10 @@ simple clock
     
 <nav id="article-nav">
   
-    <a href="/2016/06/06/添加google-analytics/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          添加google analytics
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/06/03/markdown临摹/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/06/12/页面离线缓存/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">markdown临摹</div>
+      <div class="article-nav-title">页面离线缓存</div>
     </a>
   
 </nav>

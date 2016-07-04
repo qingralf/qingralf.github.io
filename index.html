@@ -65,7 +65,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://qingralf.github.io"></form>
@@ -75,6 +75,53 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-关于自己实现索引" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/04/关于自己实现索引/" class="article-date">
+  <time datetime="2016-07-04T15:51:13.000Z" itemprop="datePublished">2016-07-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/04/关于自己实现索引/">关于自己实现索引</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>人类一思考，上帝就发笑。可怕的未知，但是还是想探寻什么。</p>
+<p>如果有一个超过4g左右的文本文件，内容大概是key\tvalue的格式，如何查找某一个key对应的value。问题的起源就在这里。曾经自以为聪明的认为，这个问题的正解是，load到数据库，建立索引，使用sql查询。直到自己发问，数据库是如何实现索引，索引在硬盘中是如何存储的，如果索引超过了内存的大小，那如何来使用这个索引。从数据库到各种大数据平台，就算没有索引，也提供了使用主键查询，又是如何实现的呢。</p>
+<p>因为索引是对数据或者地址的引用，索引的前提是否是可以根据地址定位到数据？如果不可以定位到数据，那索引又该如何实现和使用呢？</p>
+<p>目前假想的索引实现是：<br>1 保存在内存或者文件系统中。如果在文件系统中，索引需要便于查找的文件格式，比如，使用btree实现的索引，每个treeNode使用256字节，整个文件的大小除以256就是索引的行数，root节点在文件头部，根据树查找需要的key的位置。<br>2 从位置中得到数据的首地址，调用文件系统api读取此地址加上数据长度的内容，结果就是需要的value。<br>3 索引的生成如果是在文件系统中，则会有大量的io，生成过程会比较慢。</p>
+<p>要印证这些到自我实现，需要经历什么样的过程呢。数据结构只听过名字，还是得从数据结构入手吧。</p>
+<p>什么是btree，这个结构的插入，删除，更新又是如何处理的呢？从这里开始吧。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qingralf.github.io/2016/07/04/关于自己实现索引/" data-id="ciq88j1b40001g9yysrd8dlyp" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+<!-- UY BEGIN -->
+<div id="uyan_frame"></div>
+<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2102716"></script>
+<!-- UY END -->
+
   
     <article id="post-页面离线缓存" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -113,7 +160,7 @@
 <li><p>manifest文件必须以text/cache-manifest的Content－type返回，且文件以CACHE MANIFEST开头。<br>意味着动态语言生成的这个文件需要去除空行，比如jsp的&lt;％ ％&gt;指令留下的空行需要去除</p>
 </li>
 <li>引用manifest的页面默认被缓存(type为Master)。但是这个页面的缓存会重新发起一次请求，这次请求并不会携带device信息。<br>意味着如果用chrome浏览器模拟移动设备，此时缓存的页面是非移动设备的页面，影响测试。</li>
-<li>如果只缓存有限的文件，需要在manifest文件的”NETWORK:”下配置通配符 ＊ 。否则很诡异大部分请求会是net::ERR_FAILED状态。另，通配符需要另起一行写不能和“NETWORK:”并列。</li>
+<li>如果只缓存有限的文件，需要在manifest文件的”NETWORK:”下配置通配符*，让其余请求不走缓存。否则很诡异大部分请求会是net::ERR_FAILED状态。另，通配符需要另起一行写不能和“NETWORK:”并列。</li>
 <li>目前发现地址栏的任意改动都不会命中缓存(但是看缓存的地址却又不带参数)，如果到需要缓存的页面的链接带有时间戳等随机因子，每次访问都会比不加缓存多一次请求，反而拖慢页面载入速度和加重服务器压力。</li>
 </ol>
 <p>缓存后速度确实很快，不需要网络了。但是浏览器对这个的支持貌似还没跟上，调试和各种错误提示都太模糊。</p>
@@ -121,7 +168,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://qingralf.github.io/2016/06/12/页面离线缓存/" data-id="cipfpvmnz00042zyyg7io0mtr" class="article-share-link">Delen</a>
+      <a data-url="http://qingralf.github.io/2016/06/12/页面离线缓存/" data-id="ciq88j1bc0005g9yyfk6ttda5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -166,7 +213,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://qingralf.github.io/2016/06/06/添加google-analytics/" data-id="cipfpvmny00032zyyldeggpcy" class="article-share-link">Delen</a>
+      <a data-url="http://qingralf.github.io/2016/06/06/添加google-analytics/" data-id="ciq88j1b80003g9yy67zcu4o0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -231,7 +278,7 @@ simple clock
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://qingralf.github.io/2016/06/05/一个电子表/" data-id="cipfpvmnr00012zyyarmupws4" class="article-share-link">Delen</a>
+      <a data-url="http://qingralf.github.io/2016/06/05/一个电子表/" data-id="ciq88j1b60002g9yyic4u55ax" class="article-share-link">Share</a>
       
       
     </footer>
@@ -282,7 +329,7 @@ simple clock
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://qingralf.github.io/2016/06/03/markdown临摹/" data-id="cipfpvmnh00002zyyupbsoxja" class="article-share-link">Delen</a>
+      <a data-url="http://qingralf.github.io/2016/06/03/markdown临摹/" data-id="ciq88j1ay0000g9yytxjjj95l" class="article-share-link">Share</a>
       
       
     </footer>
@@ -328,7 +375,7 @@ simple clock
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://qingralf.github.io/2016/06/02/寻找未知的开始/" data-id="cipfpvmnw00022zyyrunx6vov" class="article-share-link">Delen</a>
+      <a data-url="http://qingralf.github.io/2016/06/02/寻找未知的开始/" data-id="ciq88j1ba0004g9yyvph4h8hd" class="article-share-link">Share</a>
       
       
     </footer>
@@ -358,9 +405,9 @@ simple clock
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archieven</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li></ul>
     </div>
   </div>
 
@@ -368,9 +415,13 @@ simple clock
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recente berichten</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/07/04/关于自己实现索引/">关于自己实现索引</a>
+          </li>
         
           <li>
             <a href="/2016/06/12/页面离线缓存/">页面离线缓存</a>
@@ -386,10 +437,6 @@ simple clock
         
           <li>
             <a href="/2016/06/03/markdown临摹/">markdown临摹</a>
-          </li>
-        
-          <li>
-            <a href="/2016/06/02/寻找未知的开始/">寻找未知的开始</a>
           </li>
         
       </ul>
